@@ -81,7 +81,7 @@ Hoy existe una brecha importante de herramientas digitales de apoyo e inclusión
 
 ## Metodología de trabajo del equipo
 
-El equipo trabaja bajo una metodología ágil basada en **Kanban**, gestionada en un tablero **JIRA** con tareas divididas por área técnica (Frontend, Backend/Datos, QA).
+El equipo trabaja bajo una metodología ágil basada en **Scrum**, gestionada en un tablero **JIRA** con tareas divididas por área técnica (Frontend, Backend/Datos, QA).
 
 Debido a la incompatibilidad de horarios por responsabilidades laborales de los integrantes, se adoptó un esquema de **trabajo asíncrono con metas individuales** registradas en el tablero, complementado con **reuniones de integración sincrónicas fuera del horario laboral** para consolidar avances y resolver bloqueos en conjunto.
 
