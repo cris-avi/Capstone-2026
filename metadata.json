@@ -1,0 +1,6 @@
+{
+  "name": "TEA-yudo - Comunicador SAAC y Bitácora PIE",
+  "description": "Plataforma escolar accesible de comunicación aumentativa (SAAC) para estudiantes con TEA y bitácora pedagógica para profesionales PIE.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,35 @@
+
+
+services:
+  base_datos:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_USER: ${DB_USUARIO}
+      POSTGRES_PASSWORD: ${DB_CLAVE}
+      POSTGRES_DB: ${DB_NOMBRE}
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+  backend:
+    build: ./backend
+    ports:
+      - "5000:5000"
+    environment:
+      - DB_HOST=base_datos
+      - DB_USER=${DB_USUARIO}
+      - DB_PASS=${DB_CLAVE}
+      - DB_NAME=${DB_NOMBRE}
+    depends_on:
+      - base_datos
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+
+volumes:
+  db_data:

@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+/* Tipografía Lexend: recomendada para accesibilidad cognitiva, dislexia y lectura sin sobrecarga */
+@theme {
+  --font-sans: 'Lexend', system-ui, -apple-system, sans-serif;
+}
+
+@layer base {
+  /* Mismos valores por defecto que Tailwind v3, con los que se diseñó la interfaz */
+  *, ::after, ::before, ::backdrop, ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+
+  input::placeholder, textarea::placeholder {
+    color: var(--color-gray-400);
+  }
+
+  button:not(:disabled), [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+}
+
+/* Reglas de accesibilidad cognitiva y ergonomía visual (WCAG 2.2 AAA) */
+body {
+  font-family: var(--font-sans);
+  background-color: #F8FAFC;
+  color: #0F172A;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  touch-action: manipulation; /* Evita zoom accidental por doble toque táctil */
+  -webkit-tap-highlight-color: transparent;
+}
+
+::selection {
+  background-color: var(--color-amber-200);
+}
+
+/* Borde de foco accesible de alto contraste para pulsadores, switchers y teclado */
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, [role="button"]:focus-visible {
+  outline: 4px solid #2563EB;
+  outline-offset: 3px;
+}
+
+/* Micro-animación de confirmación al pulsar un pictograma o botón de logro */
+@keyframes tarjetaPop {
+  0% { transform: scale(0.92); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+.anim-pop {
+  animation: tarjetaPop 0.22s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Estilos para impresión de la bitácora escolar */
+@media print {
+  .no-print { display: none !important; }
+  #vista-pie { display: block !important; }
+  body { background: white !important; font-size: 10pt; }
+}

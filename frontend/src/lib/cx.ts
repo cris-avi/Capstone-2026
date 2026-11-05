@@ -1,0 +1,4 @@
+// Une clases CSS ignorando valores vacíos o falsos
+export function cx(...clases: (string | false | null | undefined)[]): string {
+  return clases.filter(Boolean).join(' ');
+}
