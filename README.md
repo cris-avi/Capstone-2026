@@ -26,7 +26,7 @@ Actualmente, los equipos de aula dependen de tableros físicos en papel o cuader
 
 | Categoría | Tecnología / Herramienta | Propósito en el Sistema |
 | :--- | :--- | :--- |
-| **Frontend** | HTML5, Tailwind CSS, JavaScript nativo (Vanilla JS) | Interfaz accesible, ligera y optimizada para dispositivos táctiles sin sobrecarga cognitiva. |
+| **Frontend** | HTML5, Tailwind CSS, React | Interfaz accesible, ligera y optimizada para dispositivos táctiles sin sobrecarga cognitiva. |
 | **Accesibilidad / TTS** | Web Speech API (`SpeechSynthesis`) | Síntesis de voz en el navegador para la lectura auditiva inmediata de frases con pictogramas. |
 | **Integración Externa** | API REST de ARASAAC | Catálogo público y estandarizado de pictogramas bajo licencia Creative Commons. |
 | **Resiliencia / Caché** | Service Worker & Cache Storage | Caché de recursos gráficos para navegación fluida y tolerancia ante caídas de conexión. |
@@ -39,23 +39,23 @@ Actualmente, los equipos de aula dependen de tableros físicos en papel o cuader
 
 ---
 
-## Estructura del Repositorio
+## Cómo arrancar el proyecto
 
-```text
-tea-yudo/
-├── docs/                       # Especificaciones funcionales, DER, modelo relacional y diagramas UML
-│   ├── casos_de_uso_uml.png    # Diagrama formal de Casos de Uso
-│   └── secuencia_bitacora.png  # Diagrama formal de Secuencia (persistencia y Web Speech API)
-├── src/
-│   ├── assets/                 # Iconografía, recursos multimedia y pictogramas locales
-│   ├── css/                    # Hojas de estilo y configuración Tailwind CSS
-│   ├── js/
-│   │   ├── app.js              # Controlador principal del comunicador SAAC y eventos de UI
-│   │   ├── tts.js              # Módulo de síntesis de voz (Web Speech API)
-│   │   └── bitacora.js         # Lógica de registro local (IndexedDB) y sincronización API
-│   ├── sw.js                   # Service Worker para manejo de caché offline
-│   └── index.html              # Vistas integradas (Comunicador, Rutinas, Crisis y Bitácora)
-├── tea_yudo_sqlserver.sql      # Script DDL de creación de la base de datos (12 tablas)
-├── tea_yudo_sqlserver_drop.sql # Script para rollback/limpieza de base de datos
-└── README.md                   # Documentación principal del proyecto
+1. Entra a la carpeta del frontend:
+
+```bash
+cd frontend
+```
+
+2. Instala las dependencias:
+
+```bash
+npm install
+```
+
+3. Arranca el servidor de desarrollo:
+
+```bash
+npm run dev
+```
 
